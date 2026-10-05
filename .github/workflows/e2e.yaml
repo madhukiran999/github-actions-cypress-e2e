@@ -6,7 +6,7 @@ on:
         secrets:
             access-token:
              required: true
-
+ 
 jobs:
     e2e-tests:
         runs-on: ubuntu-latest
