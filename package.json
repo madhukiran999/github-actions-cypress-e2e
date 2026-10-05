@@ -1,0 +1,15 @@
+{
+  "name": "github-actions-cypress-e2e",
+  "version": "1.0.0",
+  "description": "github actions cypress e2e testing workflow",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "13.6.1"
+  }
+}
