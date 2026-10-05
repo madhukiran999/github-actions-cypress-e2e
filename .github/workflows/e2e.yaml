@@ -2,13 +2,26 @@ name: E2E tests
 
 on: 
     workflow_dispatch:
+    workflow_call:
+        secrets:
+            access-token:
+             required: true
 
 jobs:
     e2e-tests:
         runs-on: ubuntu-latest
         steps:
+
+            - name: Print github repo owner
+              run: |
+                echo "${{ github.repository }}"
+                
             - name: Checkout code
               uses: actions/checkout@v7
+              with:
+                repository: 'madhukiran999/github-actions-cypress-e2e'
+                ref: main
+                token: ${{ secrets.access-token || secrets.GITHUB_TOKEN }}
 
             - name: setup node
               uses: actions/setup-node@v6
